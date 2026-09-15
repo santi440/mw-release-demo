@@ -22,8 +22,8 @@ jobs:
         run: go test -v ./...
 
       - name: Upload the artifacts
-        uses: skx/github-action-publish-binaries@master
+        uses: softprops/action-gh-release@v2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          args: 'bin/*'
+          files: bin/*
